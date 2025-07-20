@@ -1,0 +1,23 @@
+# Ignore everything
+/*
+
+# Allow Git to see .gitignore and README
+!.gitignore
+!README.md
+
+# Allow source code
+!src/
+
+# Allow public folder
+!public/
+
+# Allow config files
+!eslint.config.js
+!vite.config.js
+
+# Allow index html file
+!index.html
+
+# Allow package management
+!package.json
+!pnpm-lock.yaml
