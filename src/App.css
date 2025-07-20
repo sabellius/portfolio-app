@@ -1,42 +1,112 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Base styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Header styles */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Calculate viewport height for sections */
+:root {
+  --header-height: 56px; /* Bootstrap navbar default height */
+  --footer-height: 80px; /* Adjust based on your footer height */
+}
+
+/* Common section styles */
+.full-page-section {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: var(--header-height); /* For smooth scrolling */
+}
+
+/* Hero section styles */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://via.placeholder.com/1920x1080');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* About section styles */
+.about-section {
+  padding: 2rem 0;
+}
+
+.about-image-container {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.skill-name {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  background-color: #0d6efd;
+}
+
+/* Projects section styles */
+.projects-section {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.projects-section .card {
+  transition: all 0.3s ease;
+}
+
+.projects-section .card:hover {
+  transform: translateY(-5px);
+}
+
+.projects-section .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contact section styles */
+.contact-section {
+  padding: 2rem 0;
+}
+
+/* Footer styles */
+footer {
+  background-color: #212529;
+  height: var(--footer-height);
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0d6efd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 56px;
+    --footer-height: 100px; /* Adjust for smaller screens if needed */
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
