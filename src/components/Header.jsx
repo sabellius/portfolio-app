@@ -2,25 +2,6 @@ import React, { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
 function Header() {
-  // Update CSS variable with the actual header height after render
-  useEffect(() => {
-    const updateHeaderHeight = () => {
-      const header = document.querySelector('header');
-      if (header) {
-        document.documentElement.style.setProperty(
-          '--header-height',
-          `${header.offsetHeight}px`
-        );
-      }
-    };
-
-    // Update on mount and window resize
-    updateHeaderHeight();
-    window.addEventListener('resize', updateHeaderHeight);
-
-    return () => window.removeEventListener('resize', updateHeaderHeight);
-  }, []);
-
   return (
     <header style={{ position: 'sticky', top: 0, zIndex: 1020 }}>
       <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
